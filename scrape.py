@@ -46,9 +46,9 @@ class Scrapper:
 
         tts.speak("Creating CSV", print_text=True)
         data_frame = pandas.DataFrame(list(zip(star_names, distance, mass, radius, lum)),
-                                      columns=['Star Name', 'Distance (Light Years)', 'Mass (M☉ or Solar Mass)',
-                                               'Radius (R☉ or Solar Radius)', 'Luminosity (L☉ or Solar Luminosity)'])
-        data_frame.to_csv("bright_stars.csv")
+                                      columns=['Star Name', 'Distance', 'Mass',
+                                               'Radius', 'Luminosity (L☉ or Solar Luminosity)'])
+        data_frame.to_csv("data/bright_stars.csv")
         tts.speak("Done Creating CSV", print_text=True)
 
     def scrape_brown_dwarf(self):
@@ -74,7 +74,7 @@ class Scrapper:
 
         tts.speak("Creating CSV", print_text=True)
         data_frame = pandas.DataFrame(list(zip(star_names, distance, mass, radius)),
-                                      columns=['Star Name', 'Distance (Light Years)', 'Mass (Jupiter Mass)',
-                                               'Radius (Jupiter Radius)'])
-        data_frame.to_csv("dwarf_stars.csv")
+                                      columns=['Star Name', 'Distance', 'Mass',
+                                               'Radius'])
+        data_frame.to_csv("data/dwarf_stars.csv")
         tts.speak("Done Creating CSV", print_text=True)

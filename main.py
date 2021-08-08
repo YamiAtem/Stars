@@ -6,7 +6,7 @@ url1 = "https://en.wikipedia.org/wiki/List_of_brightest_stars_and_other_record_s
 url2 = "https://en.wikipedia.org/wiki/List_of_brown_dwarfs"
 
 scrapper = Scrapper(url1, url2)
-data_processing = DataProcessing("bright_stars.csv", "dwarf_stars.csv")
+data_processing = DataProcessing("data/bright_stars.csv", "data/dwarf_stars.csv")
 
 prompt = input("Do you want to scrape? (Yes/No): ")
 
@@ -22,15 +22,15 @@ if prompt.lower() == "yes" or prompt.lower() == "y":
     tts.speak("Done scraping for brown dwarfs", print_text=True)
 
     tts.speak("Done Scraping", print_text=True)
-elif prompt.lower() == "no" or prompt.lower() == "n":
-    prompt = input("Do you want to merge data? (Yes/No): ")
+
+prompt = input("Do you want to merge data? (Yes/No): ")
 
 if prompt.lower() == "yes" or prompt.lower() == "y":
     tts.speak("Data Merging Started", print_text=True)
     data_processing.merge()
     tts.speak("Done Merging Data", print_text=True)
-elif prompt.lower() == "no" or prompt.lower() == "n":
-    prompt = input("Do you want to clean data? (Yes/No): ")
+
+prompt = input("Do you want to clean data? (Yes/No): ")
 
 if prompt.lower() == "yes" or prompt.lower() == "y":
     tts.speak("Data Cleaning Started", print_text=True)
